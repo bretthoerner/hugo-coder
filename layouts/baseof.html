@@ -66,17 +66,11 @@
   {{ end }}
   {{ end }}
 
-  <script>
-    (function () {
-        window.counterscale = {
-            q: [["set", "siteId", "{{ .Site.Title }}"], ["trackPageview"]],
-        };
-    })();
-  </script>
   <script
-      id="counterscale-script"
-      src="https://counterscale.brett.workers.dev/tracker.js"
-      defer
+    id="counterscale-script"
+    data-site-id="{{ .Site.Title }}"
+    src="https://counterscale.brett.workers.dev/tracker.js"
+    defer
   ></script>
   {{ template "_internal/google_analytics.html" . }}
 
